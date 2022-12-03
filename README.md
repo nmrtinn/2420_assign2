@@ -128,7 +128,7 @@ Step 5
 
 5. In WSL, create a caddy.service file with `vim caddy.service`
 
-6. Move the caddy.service from WSL to the*TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>`
+6. Move the caddy.service from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>`
 
 
 **Note:** Ensure that the `caddy.service` file is in the directory /etc/systemd/system
@@ -189,6 +189,8 @@ Step 9
 ------
 1. Test the load balancer by using your load balancers ip address and refreshing it multiple times. 
 2. Test the load balancer by using your load balancers ip address followed by `/api` and refreshing it multiple times.
+
+If you see the changes you made to your index.html and index.js file, then Good Job!
 
 *Congrats! You are now done! :)*
 
