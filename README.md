@@ -191,6 +191,8 @@ Step 9
 1. Test the load balancer by using your load balancers ip address and refreshing it multiple times. 
 2. Test the load balancer by using your load balancers ip address followed by `/api` and refreshing it multiple times.
 
+Example: http://24.199.71.51/api
+
 If you see the changes you made to your index.html and index.js file, then Good Job!
 
 *Congrats! You are now done! :)*
