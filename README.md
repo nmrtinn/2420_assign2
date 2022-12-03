@@ -41,9 +41,13 @@ Step 3
 -------
 1. ssh into each Droplet update them with the commands `sudo apt update` then `sudo apt upgrade` afterwards
 **Note**: Ensure to do all of the commands in this step on BOTH servers like the examples below
+
 ![](images/update.JPG)
+
 ![](images/upgrade.JPG)
+
 ![](images/update02.JPG)
+
 ![](images/upgrade02.JPG)
 
 2. Install Caddy using command 
