@@ -1,0 +1,15 @@
+[Unit]
+Description=Service file to run node application
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/ned/.volta/bin/node /var/www/src/index.js
+User=ned
+Group=ned
+Restart=on-failure
+SyslogIdentifier=hello_web
+
+[Install]
+WantedBy=multi-user.target
+
