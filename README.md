@@ -25,9 +25,13 @@ Step 2
 
 **The following commands are to be done on each Droplet**
 2. Use command `ssh -i ~/.<key> root@<server_ip>` to login as root to  
+
 3. Use command `useradd -ms /bin/bash <user_name>` to use bash as their default shell
+
 4. Use command `usermod -aG sudo <user_name>` to add the user to the sudo group
+
 5. Use command `rsync --archive --chown=<ned>:<ned> ~/.ssh /home/<user_name>` to move the user
+
 6. Use command `passwd <user_name>` to set a password for the user
 
 7. Use command `exit` to exit out of the Droplet once you're done
