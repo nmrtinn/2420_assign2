@@ -55,6 +55,7 @@ tar xvf caddy_2.6.2_linux_amd64.tar.gz
 ![](images/unarchivecaddy.JPG)
 
 4. Use the command `sudo chown root: caddy` and `sudo cp caddy /usr/bin/` to change the ownder of the caddy file and move it to /usr/bin/
+
 ![](images/lastcaddy.JPG)
 
 
@@ -80,4 +81,67 @@ Step 4
 **Note**: You can test to see if the changes have been made
 ![](images/5050.JPG)
 
-8. Move the files from WSL to the two droplets using `sftp i- ~/.ssh/<key> user_name@
+8. Move the files from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
+
+Then use the following command in each server
+```
+put -r 2420-assign-two
+```
+
+9. For **EACH** Droplet, run the commans in the screenshots to move the files to their correct directories
+![](images/mvhtml.JPG)
+![](images/mvsrc/JPG)
+![](images/dirresult.JPG)
+
+
+Step 5
+-------
+1. In WSL, create the Caddyfile using `vim Caddyfile`
+2. Add the content below
+![](images/caddy.JPG)
+
+3. Move the Caddyfile from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
+![](images/putcaddy.JPG)
+
+4. ON **EACH** Droplet, move the Caddyfile to /etc/caddy using `sudo mv Caddyfile /etc/caddy`
+
+5. In WSL, create a caddy.service file with `vim caddy.service`
+
+6. Move the caddy.service from WSL to the*TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
+**Note:** Ensure that the `caddy.service` file is in the directory /etc/systemd/system
+Do this using command `sudo mv caddy.service /etc/systemd/system` in **EACH** Droplet
+![](images/caddyservice.JPG)
+
+7. Use the commands below to restart and enable the service file
+```
+sudo systemctl daemon-reload
+sudo systemctl start caddy
+sudo systemctl enable caddy
+sudo systemctl status caddy
+```
+
+Step 6
+-------
+1. Install Volta on **EACH** Droplet with the following comamnds:
+```
+curl https://get.volta.sh | bash
+source ~/.bashrc
+volta install node 
+volta install npm
+```
+![](images/volta.JPG)
+
+
+Step 7
+-------
+1. Create a service file in WSL and add the content below
+![](images/webservice.JPG)
+
+2. Move the hello_web.service from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
+
+3. In **EACH** Droplet, move the `hello_web.service` file to the directory `/etc/systemd/system`
+![](images/hellowebmoved.JPG)
+
+
+
+
