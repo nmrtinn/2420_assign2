@@ -142,6 +142,27 @@ Step 7
 3. In **EACH** Droplet, move the `hello_web.service` file to the directory `/etc/systemd/system`
 ![](images/hellowebmoved.JPG)
 
+4. Reload the file with the commands
+
+```
+sudo systemctl daemon-reload
+sudo systemctl start hello_web
+sudo systemctl enable hello_web
+```
+
+Step 8
+-------
+1. In **ONE** of the Droplets, slightly change your index.html file in `/var/www/html` and your index.js in `/var/www/src` to differentiate the two servers
+![](images/htmlchanges.JPG)
+![](images/srcchanges.JPG)
+
+Step 9
+------
+1. Test the load balancer by using your load balancers ip address and refreshing it multiple times. 
+2. Test the load balancer by using your load balancers ip address followed by `/api` and refreshing it multiple times.
+
+*Congrats! You are now done! :)*
+
 
 
 
