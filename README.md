@@ -102,7 +102,8 @@ Then use the following command in each server
 put -r 2420-assign-two
 ```
 
-9. For **EACH** Droplet, run the commans in the screenshots to move the files to their correct directories
+9. For **EACH** Droplet, run the commands in the screenshots to move the files to their correct directories
+
 ![](images/mvhtml.JPG)
 
 ![](images/mvsrc/JPG)
@@ -113,19 +114,27 @@ put -r 2420-assign-two
 Step 5
 -------
 1. In WSL, create the Caddyfile using `vim Caddyfile`
-2. Add the content below
+
+3. Add the content below
+
 ![](images/caddy.JPG)
 
-3. Move the Caddyfile from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
+3. Move the Caddyfile from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>`
+
+
 ![](images/putcaddy.JPG)
 
 4. ON **EACH** Droplet, move the Caddyfile to /etc/caddy using `sudo mv Caddyfile /etc/caddy`
 
 5. In WSL, create a caddy.service file with `vim caddy.service`
 
-6. Move the caddy.service from WSL to the*TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
+6. Move the caddy.service from WSL to the*TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>`
+
+
 **Note:** Ensure that the `caddy.service` file is in the directory /etc/systemd/system
+
 Do this using command `sudo mv caddy.service /etc/systemd/system` in **EACH** Droplet
+
 ![](images/caddyservice.JPG)
 
 7. Use the commands below to restart and enable the service file
@@ -151,11 +160,13 @@ volta install npm
 Step 7
 -------
 1. Create a service file in WSL and add the content below
+
 ![](images/webservice.JPG)
 
 2. Move the hello_web.service from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
 
 3. In **EACH** Droplet, move the `hello_web.service` file to the directory `/etc/systemd/system`
+
 ![](images/hellowebmoved.JPG)
 
 4. Reload the file with the commands
@@ -169,7 +180,9 @@ sudo systemctl enable hello_web
 Step 8
 -------
 1. In **ONE** of the Droplets, slightly change your index.html file in `/var/www/html` and your index.js in `/var/www/src` to differentiate the two servers
+
 ![](images/htmlchanges.JPG)
+
 ![](images/srcchanges.JPG)
 
 Step 9
