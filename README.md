@@ -71,22 +71,28 @@ Step 4
 -------
 1. In WSL, in your users home directory, create a new directory called '2420-assign-two'
 2. Once created, `cd` into it and create two new directories called 'html' and 'src'
+
 ![](images/directory.JPG)
 
 3. Within the html directory, run `vim index.html` and add some content to it
+
 ![](images/html.JPG)
 
 4. Now `cd` into the src directory and run `npm init` to create a new node project, then `npm i fastify` to install fastify
 
 5. Create an index.js file and insert the fastify hello world example into index.js
+
 ![](images/indexjs.JPG)
 
 6. Test to see if the server works locally with command `node index`
 ![](images/nodeindex.JPG)
 
 7. Afterwards, change the index.js file to add reverse proxy server of localhost:5050 and the route to /api
+
 ![](images/newindex.png)
+
 **Note**: You can test to see if the changes have been made
+
 ![](images/5050.JPG)
 
 8. Move the files from WSL to the **TWO** droplets using commands `sftp i- ~/.ssh/<key> <user_name>@<server_ip>
@@ -98,7 +104,9 @@ put -r 2420-assign-two
 
 9. For **EACH** Droplet, run the commans in the screenshots to move the files to their correct directories
 ![](images/mvhtml.JPG)
+
 ![](images/mvsrc/JPG)
+
 ![](images/dirresult.JPG)
 
 
